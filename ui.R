@@ -68,7 +68,7 @@ shinyUI(fluidPage(
             p("The principal simplification is that the projection is
               undertake for 5-year age groups and steps, not single-year
               ones, as in the official projections. Also, the TFR can only
-              be  altered foralternate quinqennia and is interpolated for
+              be altered for alternate quinqennia and is interpolated for
               the intermediate ones to keep the interface simpler."),
             p("The assumptions about migration and age-specific fertility
               are held constant throughout the projection although the
@@ -80,13 +80,13 @@ shinyUI(fluidPage(
             p("The app is coded in the R package shiny. The population
               pyramid was drawn using rCharts. The code is available
               on Github at this address:", tags$a(href=
-              "https://github.com/BugBunny/ProjectionProject",
-              "https://github.com/BugBunny/ProjectionProject")),
+              "https://github.com/BugBunny/ProjectionsProject",
+              "https://github.com/BugBunny/ProjectionsProject")),
             p("A five page presentation motivating the project is
                available on git.io:", tags$a(href=
-              "http://bugbunny.github.io/ProjectionProject.html",
-              "http://bugbunny.github.io/ProjectionProject.html")),
-            p("Thanks to Kyle Walker for his",
+              "http://bugbunny.github.io/ProjectionsProject.html",
+              "http://bugbunny.github.io/ProjectionsProject.html")),
+            p("Thanks to Kyle Walker for his ",
               tags$a(href="http://walkerke.github.io/2014/06/rcharts-pyramids/",
                   "article"), " on producing interactive population pyramids in
               rCharts."),
