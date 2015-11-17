@@ -18,7 +18,7 @@ shinyUI(fluidPage(
   # Sidebar with a sliders to input total fertility and a dropdown box
    sidebarLayout(
       sidebarPanel(
-         h4("Total fertility (children):"),
+         h4("Total fertility (children per woman):"),
          sliderInput("TFR2015",
             h5("2015-20:"), min = 0.5, max = 4, value = 1.9, step=0.05),
          sliderInput("TFR2025",
