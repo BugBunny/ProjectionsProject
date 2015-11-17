@@ -84,8 +84,8 @@ shinyUI(fluidPage(
               "https://github.com/BugBunny/ProjectionsProject")),
             p("A five page presentation motivating the project is
                available on git.io:", tags$a(href=
-              "http://bugbunny.github.io/ProjectionsProject.html",
-              "http://bugbunny.github.io/ProjectionsProject.html")),
+              "http://bugbunny.github.io/ProjectionsSlides.html",
+              "http://bugbunny.github.io/ProjectionsSlides.html")),
             p("Thanks to Kyle Walker for his ",
               tags$a(href="http://walkerke.github.io/2014/06/rcharts-pyramids/",
                   "article"), " on producing interactive population pyramids in
