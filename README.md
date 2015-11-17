@@ -9,6 +9,6 @@ The code for the app comprises two R scripts: _ui.R_ and _server.R_; one of the 
 
 The active version of the app is hosted on RStudio's shiny apps server: https://bugbunny.shinyapps.io/ProjectionsProject
 
-There is a five page presentation motivating the app available on gitio: http://bugbunny.github.io/ProjectionsProject/
+There is a five page presentation motivating the app available on gitio: http://bugbunny.github.io/ProjectionsSlides/
 
 The scripts were developed using R 3.2.2 under Windows 7 SP1.
