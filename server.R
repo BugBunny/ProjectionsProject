@@ -138,7 +138,7 @@ shinyServer(function(input, output) {
       return(h)
    })
 })
-# ProjectionsProject. Copyright (C) 2015 - Ian Timaeus.
+# Projections Project. Copyright (C) 2015 - Ian Timaeus.
 # This program comes with ABSOLUTELY NO WARRANTY;
 # this is free software, and you are welcome to redistribute it
 # under certain conditions; see http://www.gnu.org/licenses/gpl.html

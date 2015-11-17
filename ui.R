@@ -9,7 +9,7 @@
 require(shiny)
 require(rCharts)
 lnk =
-  "www.ons.gov.uk/ons/rel/npp/national-population-projections/index.html"
+  "http://www.ons.gov.uk/ons/rel/npp/national-population-projections/"
 
 shinyUI(fluidPage(
 
@@ -80,17 +80,17 @@ shinyUI(fluidPage(
             p("The app is coded in the R package shiny. The population
               pyramid was drawn using rCharts. The code is available
               on Github at this address:", tags$a(href=
-              "https://github.com/BugBunny/ProjectionsProject",
-              "https://github.com/BugBunny/ProjectionsProject")),
+              "https://github.com/BugBunny/ProjectionsProject/",
+              "https://github.com/BugBunny/ProjectionsProject/")),
             p("A five page presentation motivating the project is
                available on git.io:", tags$a(href=
-              "http://bugbunny.github.io/ProjectionsSlides.html",
-              "http://bugbunny.github.io/ProjectionsSlides.html")),
+              "http://bugbunny.github.io/ProjectionsSlides/",
+              "http://bugbunny.github.io/ProjectionsSlides/")),
             p("Thanks to Kyle Walker for his ",
               tags$a(href="http://walkerke.github.io/2014/06/rcharts-pyramids/",
                   "article"), " on producing interactive population pyramids in
               rCharts."),
-            p("ProjectionsProject. Copyright (C) 2015 - Ian Timaeus.
+            p("Projections Project. Copyright (C) 2015 - Ian Timaeus.
               This program comes with ABSOLUTELY NO WARRANTY; this is free
               software, and you are welcome to redistribute it under certain
               conditions; see ", tags$a(href=
@@ -100,7 +100,7 @@ shinyUI(fluidPage(
       )
    )
 ))
-# ProjectionsProject. Copyright (C) 2015 - Ian Timaeus.
+# Projections Project. Copyright (C) 2015 - Ian Timaeus.
 # This program comes with ABSOLUTELY NO WARRANTY;
 # this is free software, and you are welcome to redistribute it
 # under certain conditions; see http://www.gnu.org/licenses/gpl.html
