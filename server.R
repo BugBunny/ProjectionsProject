@@ -45,12 +45,12 @@ Men <- c(2059, 2021, 1813, 1962, 2203, 2240, 2179, 2029, 2124, 2280,
 Women <- c(1959, 1928, 1730, 1858, 2117, 2215, 2203, 2046, 2169,
            2346, 2312, 1999, 1785, 1858, 1428, 1170, 905, 603, 304, 80)
 initPop <- data.frame(cbind(Men, Women))
-Survivorship <- read.csv("survivorship.csv")
-NetMigrants = c(23.0, 13.4, 15.5, 88.8, 183.4, 93.2, 26.1, -1.1, -13.5,
-                6.4, 1.0, -3.9, 0.4, 0.8, 0.6, 0.8, 0.4, 0.2, 0.0, 0.0,
-                18.5, 13.9, 9.6, 87.9, 164.8, 51.3, 21.7, 1.8, 0.9, 3.0,
-                4.4, 1.7, 3.0, 3.0, 2.0, 1.2, 0.5, 0.2, 0.0, 0.0)
-dim(NetMigrants) <- c(20,2)
+survivorship <- read.csv("survivorship.csv")
+netMigrants = c(46.7, 27.7, 29.1, 84.8, 176.9, 80.7, 8.9, 1.4, -11.4,
+                9.9, 1.6, 2.6, 3.2, 4.1, 2.0, 3.0, 1.5, 0.8, 0, 0,
+                38.1, 25.2, 25.8, 72.3, 148.7, 61.9, 21.8, 1.9, 8.0,
+                7.4, 9.0, 9.0, 8.0, 5.4, 3.4, 2.8, 1.7, 0.8, 0, 0)
+dim(netMigrants) <- c(20,2)
 
 shinyServer(function(input, output) {
    # The projection is done using reactive functions so that it is only
@@ -68,30 +68,30 @@ shinyServer(function(input, output) {
             as.numeric(input$TFR2045))
    })
    # Do the 35-year population projection using the user-defined ASFRs
-   projPop1 <- reactive({project_step(initPop, Survivorship[, 1:2],
-      asfr(tfr()[1]), NetMigrants)})
+   projPop1 <- reactive({project_step(initPop, survivorship[, 1:2],
+      asfr(tfr()[1]), netMigrants)})
 #  Either the dumb programmer or shiny cannot do this in a loop. This is
 #  probably because the reactive functions for each i get nested and 8
 #  levels of nesting is too much for shiny. Or it may be that I'm dumb.
 #     for (i in 2:8) {
 #       assign(paste0("projPop", i), reactive({
 #          project_step(eval(as.symbol(paste0("projPop", i-1)))(),
-#             Survivorship, asfr(tfr()[i]), NetMigrants)
+#             survivorship, asfr(tfr()[i]), netMigrants)
 #          })
 #       )
 #    }
-   projPop2 <- reactive({project_step(projPop1(), Survivorship[, 3:4],
-      asfr(tfr()[2]), NetMigrants)})
-   projPop3 <- reactive({project_step(projPop2(), Survivorship[, 5:6],
-      asfr(tfr()[3]), NetMigrants)})
-   projPop4 <- reactive({project_step(projPop3(), Survivorship[, 7:8],
-      asfr(tfr()[4]), NetMigrants)})
-   projPop5 <- reactive({project_step(projPop4(), Survivorship[, 9:10],
-      asfr(tfr()[5]), NetMigrants)})
-   projPop6 <- reactive({project_step(projPop5(), Survivorship[, 11:12],
-      asfr(tfr()[6]), NetMigrants)})
-   projPop7 <- reactive({project_step(projPop6(), Survivorship[, 13:14],
-      asfr(tfr()[7]), NetMigrants)})
+   projPop2 <- reactive({project_step(projPop1(), survivorship[, 3:4],
+      asfr(tfr()[2]), netMigrants)})
+   projPop3 <- reactive({project_step(projPop2(), survivorship[, 5:6],
+      asfr(tfr()[3]), netMigrants)})
+   projPop4 <- reactive({project_step(projPop3(), survivorship[, 7:8],
+      asfr(tfr()[4]), netMigrants)})
+   projPop5 <- reactive({project_step(projPop4(), survivorship[, 9:10],
+      asfr(tfr()[5]), netMigrants)})
+   projPop6 <- reactive({project_step(projPop5(), survivorship[, 11:12],
+      asfr(tfr()[6]), netMigrants)})
+   projPop7 <- reactive({project_step(projPop6(), survivorship[, 13:14],
+      asfr(tfr()[7]), netMigrants)})
 
    # Render textual output line
    output$Year <- renderText({
